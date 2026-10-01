@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Comparativo de Plataformas EMAIL — IUNGO em destaque | Q3/2026</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    :root {
+      --azul: #1a3a5c;
+      --verde: #2e7d32;
+      --laranja: #ef6c00;
+      --iungo: #7c3aed;
+      --dito: #1a3a5c;
+      --insider: #607d8b;
+      --ouro: #f9a825;
+      --cinza: #f5f5f5;
+      --borda: #ddd;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--cinza);
+      color: #333;
+      margin: 0;
+      padding: 24px;
+    }
+    .container {
+      max-width: 1300px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 32px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    h1 { color: var(--azul); text-align: center; margin-bottom: 6px; }
+    .subtitle { text-align: center; color: #666; margin-bottom: 8px; }
+    .highlight {
+      text-align: center;
+      background: #f3e8ff;
+      color: var(--iungo);
+      padding: 10px;
+      border-radius: 8px;
+      font-weight: 600;
+      margin-bottom: 24px;
+      border: 1px solid #d8b4fe;
+    }
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+    .kpi {
+      background: linear-gradient(135deg, #fff 0%, #f8fafc 100%);
+      border: 1px solid var(--borda);
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+    }
+    .kpi.iungo { border: 2px solid var(--iungo); background: linear-gradient(135deg, #fff 0%, #faf5ff 100%); }
+    .kpi strong { display: block; font-size: 22px; color: var(--azul); margin-bottom: 4px; }
+    .kpi.iungo strong { color: var(--iungo); }
+    .kpi span { font-size: 11px; color: #666; text-transform: uppercase; letter-spacing: 0.4px; }
+    h2 { color: var(--azul); border-bottom: 2px solid var(--borda); padding-bottom: 8px; margin-top: 40px; }
+    h3 { color: var(--iungo); font-size: 16px; margin: 16px 0 8px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 14px; font-size: 13px; }
+    th, td { padding: 9px 11px; border: 1px solid var(--borda); text-align: right; }
+    th { background: var(--azul); color: #fff; text-align: center; font-size: 12px; }
+    td:first-child, th:first-child { text-align: left; font-weight: 600; }
+    tr:nth-child(even) { background: #fafafa; }
+    .row-iungo { background: #f5f0ff !important; font-weight: 600; }
+    .row-dito { background: #e8f0fb !important; }
+    .row-insider { background: #eceff1 !important; }
+    .top1 { background: #fff8e1 !important; }
+    .top2 { background: #e3f2fd !important; }
+    .top3 { background: #fbe9e7 !important; }
+    .medalha { font-size: 16px; margin-right: 4px; }
+    .chart-row { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-bottom: 28px; }
+    .chart-box { background: #fff; border: 1px solid var(--borda); border-radius: 10px; padding: 16px; }
+    .chart-full { width: 100%; margin-bottom: 28px; }
+    .mes-block { background: #fafafa; border: 1px solid var(--borda); border-radius: 10px; padding: 16px; margin-bottom: 18px; }
+    .mes-block h3 { margin-top: 0; color: var(--azul); border-bottom: 1px dashed var(--borda); padding-bottom: 6px; }
+    .texto { line-height: 1.7; margin-top: 18px; }
+    .destaque { color: var(--verde); font-weight: bold; }
+    .iungo-txt { color: var(--iungo); font-weight: bold; }
+    .dito-txt { color: var(--dito); font-weight: bold; }
+    .alerta { color: #c62828; font-weight: bold; }
+    .nota { font-size: 12px; color: #888; margin-top: 8px; }
+    .flecha-up { color: #2e7d32; font-weight: bold; }
+    .flecha-down { color: #c62828; font-weight: bold; }
+    .info-box {
+      background: #fff3e0;
+      border-left: 4px solid var(--laranja);
+      padding: 12px 16px;
+      margin: 18px 0;
+      font-size: 13px;
+      border-radius: 4px;
+    }
+    @media (max-width: 900px) {
+      .chart-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>📧 Comparativo de Plataformas de E-mail — Destaque IUNGO</h1>
+  <p class="subtitle">Julho · Agosto · Setembro/2026 | 6 marcas do grupo | Session Medium = email</p>
+  <div class="highlight">🔍 Quem foi a melhor plataforma? Comparativo completo de IUNGO × DITO × insider × demais</div>
+
+  <div class="info-box">
+    <strong>Nota:</strong> Dados filtrados para Session Medium = "email". Total de 45 registros analisados. Plataformas identificadas: <strong>DITO</strong>, <strong>Omnilogic/IUNGO</strong>, <strong>insider</strong>, <strong>email</strong> e <strong>MailCRM</strong>.
+  </div>
+
+  <div class="kpi-grid">
+    <div class="kpi iungo"><strong>+157%</strong><span>Crescimento IUNGO (Jul→Set)</span></div>
+    <div class="kpi iungo"><strong>1º lugar</strong><span>IUNGO em conversão (3 meses)</span></div>
+    <div class="kpi iungo"><strong>2º lugar</strong><span>IUNGO em receita (Ago e Set)</span></div>
+    <div class="kpi"><strong>3º lugar</strong><span>IUNGO em receita (trimestre)</span></div>
+    <div class="kpi"><strong>-42%</strong><span>Queda do DITO (Jul→Set)</span></div>
+    <div class="kpi"><strong>R$ 9,43M</strong><span>Receita total e-mail (trim.)</span></div>
+  </div>
+
+  <!-- ============ RANKING RECEITA TRIMESTRE ============ -->
+  <h2>🏆 Ranking por Valor de Venda — TRIMESTRE</h2>
+  <table>
+    <thead>
+      <tr><th>Posição</th><th>Plataforma</th><th>Total de Venda</th><th>Sessions</th><th>Vendas</th><th>% do Total</th></tr>
+    </thead>
+    <tbody>
+      <tr class="top1 row-dito"><td><span class="medalha">🥇</span>1º</td><td>DITO</td><td>R$ 5.143.103,83</td><td>533.215</td><td>5.567</td><td>54,5%</td></tr>
+      <tr class="top2 row-iungo"><td><span class="medalha">🥈</span>2º</td><td>IUNGO</td><td>R$ 2.257.623,68</td><td>230.362</td><td>4.003</td><td>23,9%</td></tr>
+      <tr class="top3 row-insider"><td><span class="medalha">🥉</span>3º</td><td>insider</td><td>R$ 2.030.432,46</td><td>343.093</td><td>3.773</td><td>21,5%</td></tr>
+      <tr><td>4º</td><td>MailCRM</td><td>R$ 2.928,50</td><td>50</td><td>2</td><td>0,0%</td></tr>
+      <tr><td>5º</td><td>email</td><td>R$ 2.353,00</td><td>253</td><td>1</td><td>0,0%</td></tr>
+      <tr class="row-iungo"><td colspan="2" style="text-align:right; font-weight:bold;">TOTAL</td><td style="font-weight:bold;">R$ 9.436.441,47</td><td style="font-weight:bold;">1.106.973</td><td style="font-weight:bold;">13.346</td><td style="font-weight:bold;">100%</td></tr>
+    </tbody>
+  </table>
+
+  <h2>🎯 Ranking por Taxa de Conversão — TRIMESTRE</h2>
+  <table>
+    <thead>
+      <tr><th>Posição</th><th>Plataforma</th><th>Tx. Conversão</th><th>Vendas</th><th>Sessions</th></tr>
+    </thead>
+    <tbody>
+      <tr class="top1"><td>🥇 1º*</td><td>MailCRM</td><td>4,00%</td><td>2</td><td>50</td></tr>
+      <tr class="top2 row-iungo"><td>🥈 2º / <span class="iungo-txt">1º real</span></td><td>IUNGO</td><td>1,74%</td><td>4.003</td><td>230.362</td></tr>
+      <tr class="top3 row-insider"><td>🥉 3º</td><td>insider</td><td>1,10%</td><td>3.773</td><td>343.093</td></tr>
+      <tr><td>4º</td><td>DITO</td><td>1,04%</td><td>5.567</td><td>533.215</td></tr>
+      <tr><td>5º</td><td>email</td><td>0,40%</td><td>1</td><td>253</td></tr>
+    </tbody>
+  </table>
+  <p class="nota">* MailCRM tem base amostral insignificante (50 sessions). Entre as <strong>3 plataformas principais, a IUNGO é a líder absoluta de conversão (1,74%)</strong>, convertendo ~67% melhor que o DITO e ~58% melhor que a insider.</p>
+
+  <!-- ============ RANKING MENSAL RECEITA ============ -->
+  <h2>📅 Ranking Mensal por Valor de Venda</h2>
+
+  <div class="mes-block">
+    <h3>📆 Julho/2026 — Total e-mail: R$ 3.308.396,91</h3>
+    <table>
+      <thead><tr><th>Posição</th><th>Plataforma</th><th>Total de Venda</th><th>Sessions</th><th>Vendas</th><th>Tx. Conv.</th></tr></thead>
+      <tbody>
+        <tr class="top1 row-dito"><td>🥇 1º</td><td>DITO</td><td>R$ 2.137.949,92</td><td>188.503</td><td>2.050</td><td>1,09%</td></tr>
+        <tr class="top2 row-insider"><td>🥈 2º</td><td>insider</td><td>R$ 717.090,48</td><td>121.826</td><td>1.440</td><td>1,18%</td></tr>
+        <tr class="top3 row-iungo"><td>🥉 3º</td><td>IUNGO</td><td>R$ 450.429,01</td><td>44.140</td><td>790</td><td>1,79%</td></tr>
+        <tr><td>4º</td><td>MailCRM</td><td>R$ 2.928,50</td><td>50</td><td>2</td><td>4,00%</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="mes-block">
+    <h3>📆 Agosto/2026 — Total e-mail: R$ 2.993.302,22</h3>
+    <table>
+      <thead><tr><th>Posição</th><th>Plataforma</th><th>Total de Venda</th><th>Sessions</th><th>Vendas</th><th>Tx. Conv.</th></tr></thead>
+      <tbody>
+        <tr class="top1 row-dito"><td>🥇 1º</td><td>DITO</td><td>R$ 1.757.159,12</td><td>191.130</td><td>2.029</td><td>1,06%</td></tr>
+        <tr class="top2 row-iungo"><td>🥈 2º</td><td>IUNGO</td><td>R$ 648.336,06</td><td>69.895</td><td>1.145</td><td>1,64%</td></tr>
+        <tr class="top3 row-insider"><td>🥉 3º</td><td>insider</td><td>R$ 585.454,04</td><td>99.136</td><td>1.047</td><td>1,06%</td></tr>
+        <tr><td>4º</td><td>email</td><td>R$ 2.353,00</td><td>253</td><td>1</td><td>0,40%</td></tr>
+      </tbody>
+    </table>
+    <p class="nota">🔎 Em agosto, a <strong>IUNGO ultrapassa a insider</strong> em receita pela primeira vez.</p>
+  </div>
+
+  <div class="mes-block">
+    <h3>📆 Setembro/2026 — Total e-mail: R$ 3.134.742,34</h3>
+    <table>
+      <thead><tr><th>Posição</th><th>Plataforma</th><th>Total de Venda</th><th>Sessions</th><th>Vendas</th><th>Tx. Conv.</th></tr></thead>
+      <tbody>
+        <tr class="top1 row-dito"><td>🥇 1º</td><td>DITO</td><td>R$ 1.247.994,79</td><td>153.582</td><td>1.488</td><td>0,97%</td></tr>
+        <tr class="top2 row-iungo"><td>🥈 2º</td><td>IUNGO</td><td>R$ 1.158.858,61</td><td>116.327</td><td>2.068</td><td>1,78%</td></tr>
+        <tr class="top3 row-insider"><td>🥉 3º</td><td>insider</td><td>R$ 727.887,94</td><td>122.131</td><td>1.286</td><td>1,05%</td></tr>
+      </tbody>
+    </table>
+    <p class="nota">🔎 Em setembro, a <strong>IUNGO encosta no DITO</strong> — diferença de apenas R$ 89 mil. Se a tendência continuar, a IUNGO assume a liderança em outubro.</p>
+  </div>
+
+  <!-- ============ RANKING MENSAL CONVERSÃO ============ -->
+  <h2>📅 Ranking Mensal por Taxa de Conversão (plataformas principais)</h2>
+
+  <div class="mes-block">
+    <h3>📆 Julho/2026</h3>
+    <table>
+      <thead><tr><th>Posição</th><th>Plataforma</th><th>Tx. Conversão</th><th>Vendas</th><th>Sessions</th></tr></thead>
+      <tbody>
+        <tr class="top1 row-iungo"><td>🥇 1º</td><td>IUNGO</td><td>1,79%</td><td>790</td><td>44.140</td></tr>
+        <tr class="top2 row-insider"><td>🥈 2º</td><td>insider</td><td>1,18%</td><td>1.440</td><td>121.826</td></tr>
+        <tr class="top3 row-dito"><td>🥉 3º</td><td>DITO</td><td>1,09%</td><td>2.050</td><td>188.503</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="mes-block">
+    <h3>📆 Agosto/2026</h3>
+    <table>
+      <thead><tr><th>Posição</th><th>Plataforma</th><th>Tx. Conversão</th><th>Vendas</th><th>Sessions</th></tr></thead>
+      <tbody>
+        <tr class="top1 row-iungo"><td>🥇 1º</td><td>IUNGO</td><td>1,64%</td><td>1.145</td><td>69.895</td></tr>
+        <tr class="top2 row-dito"><td>🥈 2º</td><td>DITO</td><td>1,06%</td><td>2.029</td><td>191.130</td></tr>
+        <tr class="top3 row-insider"><td>🥉 3º</td><td>insider</td><td>1,06%</td><td>1.047</td><td>99.136</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="mes-block">
+    <h3>📆 Setembro/2026</h3>
+    <table>
+      <thead><tr><th>Posição</th><th>Plataforma</th><th>Tx. Conversão</th><th>Vendas</th><th>Sessions</th></tr></thead>
+      <tbody>
+        <tr class="top1 row-iungo"><td>🥇 1º</td><td>IUNGO</td><td>1,78%</td><td>2.068</td><td>116.327</td></tr>
+        <tr class="top2 row-insider"><td>🥈 2º</td><td>insider</td><td>1,05%</td><td>1.286</td><td>122.131</td></tr>
+        <tr class="top3 row-dito"><td>🥉 3º</td><td>DITO</td><td>0,97%</td><td>1.488</td><td>153.582</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ============ GRÁFICOS ============ -->
+  <h2>📊 Gráficos Comparativos</h2>
+  <div class="chart-full">
+    <div class="chart-box">
+      <canvas id="chartReceitaEvolucao"></canvas>
+    </div>
+  </div>
+  <div class="chart-row">
+    <div class="chart-box">
+      <canvas id="chartReceitaTri"></canvas>
+    </div>
+    <div class="chart-box">
+      <canvas id="chartConvTri"></canvas>
+    </div>
+  </div>
+  <div class="chart-full">
+    <div class="chart-box">
+      <canvas id="chartConvEvolucao"></canvas>
+    </div>
+  </div>
+  <div class="chart-full">
+    <div class="chart-box">
+      <canvas id="chartSessionsEvolucao"></canvas>
+    </div>
+  </div>
+
+  <!-- ============ DESCRITIVO ============ -->
+  <h2>📝 Descritivo da Análise</h2>
+  <div class="texto">
+    <h3>O grande vencedor em eficiência: IUNGO</h3>
+    <p>
+      A <span class="iungo-txt">IUNGO é a única plataforma que liderou a taxa de conversão nos três meses consecutivos</span>: 1,79% (jul), 1,64% (ago) e 1,78% (set) — média trimestral de <strong>1,74%</strong>. Para efeito de comparação, o DITO converteu 1,04% e a insider 1,10% no trimestre. Ou seja, <span class="destaque">a IUNGO converte ~67% melhor que o DITO e ~58% melhor que a insider</span>, apesar de operar com um volume de sessions bem menor (230 mil vs. 533 mil do DITO).
+    </p>
+
+    <h3>Crescimento da IUNGO mês a mês</h3>
+    <p>
+      A trajetória da IUNGO é <span class="destaque">fortemente ascendente</span>: <strong>R$ 450 mil (jul) → R$ 648 mil (ago) → R$ 1,16 mi (set)</strong>, um crescimento de <span class="flecha-up">+157%</span> no trimestre. Esse crescimento veio com <strong>conversão estável</strong>, o que indica que a ferramenta escalou receita sem sacrificar eficiência. No ranking mensal de receita, a IUNGO subiu do <strong>3º lugar (jul) para o 2º lugar (ago e set)</strong>, encostando no DITO em setembro (diferença de apenas R$ 89 mil).
+    </p>
+
+    <h3>O DITO em queda</h3>
+    <p>
+      O DITO ainda é o <span class="dito-txt">líder em receita absoluta</span> (R$ 5,14M no trimestre), mas está em <span class="alerta">declínio acentuado</span>: caiu de R$ 2,14M (jul) para R$ 1,76M (ago) e R$ 1,25M (set) — uma queda de <span class="flecha-down">-42%</span> entre julho e setembro. Sua taxa de conversão também caiu de 1,09% para 0,97% no mesmo período. Se essa tendência continuar, a IUNGO pode ultrapassar o DITO em breve.
+    </p>
+
+    <h3>A insider: volume grande, mas conversão fraca</h3>
+    <p>
+      A insider fica em 3º lugar em receita no trimestre (R$ 2,03M), mas é a <span class="alerta">plataforma com a pior taxa de conversão entre as principais (1,10%)</span>. Sua conversão caiu de 1,18% (jul) para 1,05% (set), seguindo a mesma tendência de queda do DITO. Em agosto, a insider foi ultrapassada pela IUNGO em receita (R$ 585 mil vs. R$ 648 mil), voltando à frente apenas em setembro (R$ 728 mil vs. R$ 1,16 mi).
+    </p>
+
+    <h3>Resumo dos rankings</h3>
+    <p><strong>Por Valor de Venda (trimestre):</strong></p>
+    <ul>
+      <li>🥇 DITO — R$ 5,14M</li>
+      <li>🥈 IUNGO — R$ 2,26M</li>
+      <li>🥉 insider — R$ 2,03M</li>
+    </ul>
+    <p><strong>Por Taxa de Conversão (trimestre, plataformas principais):</strong></p>
+    <ul>
+      <li>🥇 <span class="iungo-txt">IUNGO — 1,74%</span></li>
+      <li>🥈 insider — 1,10%</li>
+      <li>🥉 DITO — 1,04%</li>
+    </ul>
+
+    <h3>Conclusão</h3>
+    <p>
+      Se o critério for <strong>receita</strong>, o <span class="dito-txt">DITO é o 1º lugar</span> (mas em queda de -42%). Se o critério for <strong>eficiência de conversão</strong>, a <span class="iungo-txt">IUNGO é a campeã disparada</span> — 1º lugar nos três meses. A IUNGO é hoje a <span class="destaque">melhor plataforma de e-mail do grupo em termos de qualidade</span>: menos tráfego, mas muito mais bem convertido. A recomendação é <span class="destaque">realocar volume do DITO (que está caindo e convertendo mal) para a IUNGO</span>, que comprovadamente converte melhor e cresce com consistência.
+    </p>
+  </div>
+
+  <p style="margin-top: 30px; font-size: 12px; color: #888;">
+    * Dados filtrados exclusivamente para Session Medium = "email". Total de 45 registros. Plataformas: DITO, Omnilogic/IUNGO, insider, email, MailCRM.
+  </p>
+</div>
+
+<script>
+  // ---- Evolução de Receita (linha) ----
+  new Chart(document.getElementById('chartReceitaEvolucao'), {
+    type: 'line',
+    data: {
+      labels: ['Jul/2026', 'Ago/2026', 'Set/2026'],
+      datasets: [
+        {
+          label: 'DITO',
+          data: [2137949.92, 1757159.12, 1247994.79],
+          borderColor: '#1a3a5c',
+          backgroundColor: '#1a3a5c',
+          tension: 0.3,
+          pointRadius: 5,
+          borderWidth: 2
+        },
+        {
+          label: 'insider',
+          data: [717090.48, 585454.04, 727887.94],
+          borderColor: '#607d8b',
+          backgroundColor: '#607d8b',
+          tension: 0.3,
+          pointRadius: 5,
+          borderWidth: 2
+        },
+        {
+          label: 'IUNGO',
+          data: [450429.01, 648336.06, 1158858.61],
+          borderColor: '#7c3aed',
+          backgroundColor: '#7c3aed',
+          borderWidth: 4,
+          tension: 0.3,
+          pointRadius: 6
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        title: { display: true, text: 'Evolução de Receita por Plataforma — IUNGO em alta, DITO em queda' },
+        tooltip: {
+          callbacks: { label: ctx => ctx.dataset.label + ': R$ ' + ctx.raw.toLocaleString('pt-BR', {minimumFractionDigits: 2}) }
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          title: { display: true, text: 'R$' },
+          ticks: { callback: v => 'R$ ' + (v/1000).toFixed(0) + 'k' }
+        }
+      }
+    }
+  });
+
+  // ---- Receita trimestral por plataforma (barra horizontal) ----
+  new Chart(document.getElementById('chartReceitaTri'), {
+    type: 'bar',
+    data: {
+      labels: ['DITO', 'IUNGO', 'insider', 'MailCRM', 'email'],
+      datasets: [{
+        label: 'Total de Venda (R$)',
+        data: [5143103.83, 2257623.68, 2030432.46, 2928.50, 2353.00],
+        backgroundColor: ['#1a3a5c', '#7c3aed', '#607d8b', '#b0bec5', '#b0bec5']
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      plugins: {
+        title: { display: true, text: 'Ranking Trimestral — Valor de Venda por Plataforma' },
+        legend: { display: false },
+        tooltip: { callbacks: { label: ctx => 'R$ ' + ctx.raw.toLocaleString('pt-BR', {minimumFractionDigits: 2}) } }
+      },
+      scales: { x: { beginAtZero: true, title: { display: true, text: 'R$' } } }
+    }
+  });
+
+  // ---- Conversão trimestral por plataforma (barra horizontal) ----
+  new Chart(document.getElementById('chartConvTri'), {
+    type: 'bar',
+    data: {
+      labels: ['MailCRM*', 'IUNGO', 'insider', 'DITO', 'email'],
+      datasets: [{
+        label: 'Tx. Conversão (%)',
+        data: [4.00, 1.74, 1.10, 1.04, 0.40],
+        backgroundColor: ['#e0e0e0', '#7c3aed', '#607d8b', '#1a3a5c', '#b0bec5']
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      plugins: {
+        title: { display: true, text: 'Ranking Trimestral — Taxa de Conversão (IUNGO lidera entre as principais)' },
+        legend: { display: false },
+        tooltip: { callbacks: { label: ctx => ctx.raw.toFixed(2).replace('.', ',') + '%' } }
+      },
+      scales: { x: { beginAtZero: true, title: { display: true, text: '%' } } }
+    }
+  });
+
+  // ---- Evolução de Conversão (linha) ----
+  new Chart(document.getElementById('chartConvEvolucao'), {
+    type: 'line',
+    data: {
+      labels: ['Jul/2026', 'Ago/2026', 'Set/2026'],
+      datasets: [
+        {
+          label: 'IUNGO',
+          data: [1.79, 1.64, 1.78],
+          borderColor: '#7c3aed',
+          backgroundColor: '#7c3aed',
+          borderWidth: 4,
+          tension: 0.3,
+          pointRadius: 6
+        },
+        {
+          label: 'insider',
+          data: [1.18, 1.06, 1.05],
+          borderColor: '#607d8b',
+          backgroundColor: '#607d8b',
+          tension: 0.3,
+          pointRadius: 5,
+          borderWidth: 2
+        },
+        {
+          label: 'DITO',
+          data: [1.09, 1.06, 0.97],
+          borderColor: '#1a3a5c',
+          backgroundColor: '#1a3a5c',
+          tension: 0.3,
+          pointRadius: 5,
+          borderWidth: 2
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        title: { display: true, text: 'Evolução da Taxa de Conversão — IUNGO sempre no topo' },
+        tooltip: { callbacks: { label: ctx => ctx.dataset.label + ': ' + ctx.raw.toFixed(2).replace('.', ',') + '%' } }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          title: { display: true, text: '%' }
+        }
+      }
+    }
+  });
+
+  // ---- Evolução de Sessions (linha) ----
+  new Chart(document.getElementById('chartSessionsEvolucao'), {
+    type: 'line',
+    data: {
+      labels: ['Jul/2026', 'Ago/2026', 'Set/2026'],
+      datasets: [
+        {
+          label: 'DITO',
+          data: [188503, 191130, 153582],
+          borderColor: '#1a3a5c',
+          backgroundColor: '#1a3a5c',
+          tension: 0.3,
+          pointRadius: 5,
+          borderWidth: 2
+        },
+        {
+          label: 'insider',
+          data: [121826, 99136, 122131],
+          borderColor: '#607d8b',
+          backgroundColor: '#607d8b',
+          tension: 0.3,
+          pointRadius: 5,
+          borderWidth: 2
+        },
+        {
+          label: 'IUNGO',
+          data: [44140, 69895, 116327],
+          borderColor: '#7c3aed',
+          backgroundColor: '#7c3aed',
+          borderWidth: 4,
+          tension: 0.3,
+          pointRadius: 6
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        title: { display: true, text: 'Evolução de Sessions por Plataforma — IUNGO cresce 164% em tráfego' },
+        tooltip: { callbacks: { label: ctx => ctx.dataset.label + ': ' + ctx.raw.toLocaleString('pt-BR') + ' sessions' } }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          title: { display: true, text: 'Sessions' },
+          ticks: { callback: v => (v/1000).toFixed(0) + 'k' }
+        }
+      }
+    }
+  });
+</script>
+
+</body>
+</html>
